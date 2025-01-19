@@ -16,7 +16,7 @@ export default function Footer() {
               {/* <Logo /> */}
             </div>
             <div className="text-sm text-gray-600">
-              &copy; Cruip.com - All rights reserved.
+              &copy; Innovent.com - All rights reserved.
             </div>
           </div>
 
