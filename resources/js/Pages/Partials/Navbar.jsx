@@ -15,7 +15,7 @@ export default function Navbar() {
           <ul className="flex flex-1 items-center justify-end gap-3">
             <li>
               <Link
-                href="/signin"
+                href="/login"
                 className="inline-block px-4 py-2 text-sm font-semibold text-gray-800 bg-white rounded-md shadow hover:bg-gray-50 transition duration-300"
               >
                 Login
@@ -23,7 +23,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/signup"
+                href="/register"
                 className="inline-block px-4 py-2 text-sm font-semibold text-gray-200 bg-gray-800 rounded-md shadow hover:bg-gray-900 transition duration-300"
               >
                 Register
