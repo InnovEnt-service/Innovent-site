@@ -1,37 +1,149 @@
 import React from "react";
-import { Link } from "@inertiajs/react";
+
+import ApplicationLogo from '@/Components/ApplicationLogo';
+import Dropdown from '@/Components/Dropdown';
+import NavLink from '@/Components/NavLink';
+import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
+import { Link } from '@inertiajs/react';
 
 export default function Navbar() {
   return (
-    <header className="fixed top-2 z-30 w-full md:top-6">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-sm before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(theme(colors.gray.100),theme(colors.gray.200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
-          {/* Site branding */}
-          <div className="flex flex-1 items-center">
-            Innovent
+    <main className="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
+  <div className="main-navbar sticky-top bg-white">
+    {/* Main Navbar */}
+    <nav className="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
+      <form
+        action="#"
+        className="main-navbar__search w-100 d-none d-md-flex d-lg-flex"
+      >
+        <div className="input-group input-group-seamless ml-3">
+          <div className="input-group-prepend">
+            <div className="input-group-text">
+              <i className="fas fa-search" />
+            </div>
           </div>
-
-          {/* Desktop sign in links */}
-          <ul className="flex flex-1 items-center justify-end gap-3">
-            <li>
-              <Link
-                href="/login"
-                className="inline-block px-4 py-2 text-sm font-semibold text-gray-800 bg-white rounded-md shadow hover:bg-gray-50 transition duration-300"
-              >
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/register"
-                className="inline-block px-4 py-2 text-sm font-semibold text-gray-200 bg-gray-800 rounded-md shadow hover:bg-gray-900 transition duration-300"
-              >
-                Register
-              </Link>
-            </li>
-          </ul>
+          <input
+            className="navbar-search form-control"
+            type="text"
+            placeholder="Search for something..."
+            aria-label="Search"
+          />{" "}
         </div>
-      </div>
-    </header>
+      </form>
+      <ul className="navbar-nav border-left flex-row ">
+        <li className="nav-item border-right dropdown notifications">
+          <a
+            className="nav-link nav-link-icon text-center"
+            href="#"
+            role="button"
+            id="dropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <div className="nav-link-icon__wrapper">
+              <i className="material-icons"></i>
+              <span className="badge badge-pill badge-danger">2</span>
+            </div>
+          </a>
+          <div
+            className="dropdown-menu dropdown-menu-small"
+            aria-labelledby="dropdownMenuLink"
+          >
+            <a className="dropdown-item" href="#">
+              <div className="notification__icon-wrapper">
+                <div className="notification__icon">
+                  <i className="material-icons"></i>
+                </div>
+              </div>
+              <div className="notification__content">
+                <span className="notification__category">Analytics</span>
+                <p>
+                  Your website’s active users count increased by
+                  <span className="text-success text-semibold">28%</span> in the
+                  last week. Great job!
+                </p>
+              </div>
+            </a>
+            <a className="dropdown-item" href="#">
+              <div className="notification__icon-wrapper">
+                <div className="notification__icon">
+                  <i className="material-icons"></i>
+                </div>
+              </div>
+              <div className="notification__content">
+                <span className="notification__category">Sales</span>
+                <p>
+                  Last week your store’s sales count decreased by
+                  <span className="text-danger text-semibold">5.52%</span>. It
+                  could have been worse!
+                </p>
+              </div>
+            </a>
+            <a className="dropdown-item notification__all text-center" href="#">
+              {" "}
+              View all Notifications{" "}
+            </a>
+          </div>
+        </li>
+        <li className="nav-item dropdown">
+          <a
+            className="nav-link dropdown-toggle text-nowrap px-3"
+            data-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <img
+              className="user-avatar rounded-circle mr-2"
+              src="images/avatars/0.jpg"
+              alt="User Avatar"
+            />
+            <span className="d-none d-md-inline-block">Sierra Brooks</span>
+          </a>
+          <div className="dropdown-menu dropdown-menu-small">
+            <a className="dropdown-item" href="user-profile-lite.html">
+              <i className="material-icons"></i> Profile
+            </a>
+            <a className="dropdown-item" href="components-blog-posts.html">
+              <i className="material-icons">vertical_split</i> Blog Posts
+            </a>
+            <a className="dropdown-item" href="add-new-post.html">
+              <i className="material-icons">note_add</i> Add New Post
+            </a>
+            <div className="dropdown-divider" />
+            {/* <a className="dropdown-item text-danger" href="#">
+              <i className="material-icons text-danger"></i> Logout{" "}
+            </a> */}
+            <Dropdown>
+                <Dropdown.Content>
+                        <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link>
+                        <Dropdown.Link href={route('logout')} method="post" as="button">
+                                                Log Out
+                        </Dropdown.Link>
+                </Dropdown.Content>
+            </Dropdown>
+          </div>
+        </li>
+      </ul>
+      <nav className="nav">
+        <a
+          href="#"
+          className="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left"
+          data-toggle="collapse"
+          data-target=".header-navbar"
+          aria-expanded="false"
+          aria-controls="header-navbar"
+        >
+          <i className="material-icons"></i>
+        </a>
+      </nav>
+    </nav>
+  </div>
+  {/* / .main-navbar */}
+
+</main>
+
   );
 }

@@ -1,6 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
-import { Bar, Line, Pie } from "react-chartjs-2";
+import { Bar, Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, PointElement, LineElement, ArcElement } from "chart.js";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, PointElement, LineElement, ArcElement);
@@ -24,26 +24,18 @@ export default function Dashboard({ auth }) {
         }],
     };
 
-    const pieData = {
-        labels: ["Red", "Blue", "Yellow"],
-        datasets: [{
-            label: "Users",
-            data: [10, 20, 30],
-            backgroundColor: ["red", "blue", "yellow"],
-        }],
-    };
     return (
         <AuthenticatedLayout
         user={auth.user}
         header={<h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Dashboard</h2>}
         >
-        <Head title="Dashboard" />
+         <Head title="Dashboard" />
 
-        <div className="py-12">
-            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+       {/* <div className="py-12">
+
                 <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Dashboard Overview</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                         <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
                             <h4 className="text-center text-lg font-medium">Sales Overview</h4>
                             <Bar data={barData} />
@@ -52,14 +44,10 @@ export default function Dashboard({ auth }) {
                             <h4 className="text-center text-lg font-medium">Revenue Trend</h4>
                             <Line data={lineData} />
                         </div>
-                        <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
-                            <h4 className="text-center text-lg font-medium">User Distribution</h4>
-                            <Pie data={pieData} />
-                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+
+        </div> */}
     </AuthenticatedLayout>
     );
 }
