@@ -6,7 +6,6 @@ import Navbar from "./Partials/Navbar";
 const Welcome = function () {
     return (
         <>
-            <Navbar />
             <div className="min-h-screen bg-gray-100 flex items-center justify-center py-16 px-4 sm:px-6 md:px-12">
                 <div className="text-center max-w-4xl mx-auto">
                     <h1
