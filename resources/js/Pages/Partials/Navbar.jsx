@@ -8,7 +8,7 @@ import { Link } from '@inertiajs/react';
 
 export default function Navbar() {
   return (
-    <main className="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
+
   <div className="main-navbar sticky-top bg-white">
     {/* Main Navbar */}
     <nav className="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
@@ -113,17 +113,17 @@ export default function Navbar() {
               <i className="material-icons">note_add</i> Add New Post
             </a>
             <div className="dropdown-divider" />
-            {/* <a className="dropdown-item text-danger" href="#">
+            <a className="dropdown-item text-danger" href={route('logout')}>
               <i className="material-icons text-danger"></i> Logout{" "}
-            </a> */}
-            <Dropdown>
+            </a>
+            {/* <Dropdown>
                 <Dropdown.Content>
                         <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link>
                         <Dropdown.Link href={route('logout')} method="post" as="button">
                                                 Log Out
                         </Dropdown.Link>
                 </Dropdown.Content>
-            </Dropdown>
+            </Dropdown> */}
           </div>
         </li>
       </ul>
@@ -141,9 +141,6 @@ export default function Navbar() {
       </nav>
     </nav>
   </div>
-  {/* / .main-navbar */}
-
-</main>
 
   );
 }
