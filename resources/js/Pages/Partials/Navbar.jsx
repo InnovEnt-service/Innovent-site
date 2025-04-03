@@ -1,146 +1,28 @@
 import React from "react";
 
-import ApplicationLogo from '@/Components/ApplicationLogo';
-import Dropdown from '@/Components/Dropdown';
-import NavLink from '@/Components/NavLink';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
-import { Link } from '@inertiajs/react';
 
 export default function Navbar() {
-  return (
-
-  <div className="main-navbar sticky-top bg-white">
-    {/* Main Navbar */}
-    <nav className="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
-      <form
-        action="#"
-        className="main-navbar__search w-100 d-none d-md-flex d-lg-flex"
-      >
-        <div className="input-group input-group-seamless ml-3">
-          <div className="input-group-prepend">
-            <div className="input-group-text">
-              <i className="fas fa-search" />
+    return (
+        <nav className="sticky top-0 left-0 w-full h-[72px] px-6 flex justify-between items-center gap-6
+                      bg-[hsla(var(--public-dark-bg-00-hsl),0.5)] backdrop-blur-[24px]
+                      shadow-md z-[9999] transition-all duration-300">
+            <div className="text-white font-bold text-xl">
+                <img src="/images/logo/Innovent_logo_PM-removebg-preview.png" alt="Innovent Logo" className="h-auto w-32 cursor-pointer" />
             </div>
-          </div>
-          <input
-            className="navbar-search form-control"
-            type="text"
-            placeholder="Search for something..."
-            aria-label="Search"
-          />{" "}
-        </div>
-      </form>
-      <ul className="navbar-nav border-left flex-row ">
-        <li className="nav-item border-right dropdown notifications">
-          <a
-            className="nav-link nav-link-icon text-center"
-            href="#"
-            role="button"
-            id="dropdownMenuLink"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <div className="nav-link-icon__wrapper">
-              <i className="material-icons"></i>
-              <span className="badge badge-pill badge-danger">2</span>
-            </div>
-          </a>
-          <div
-            className="dropdown-menu dropdown-menu-small"
-            aria-labelledby="dropdownMenuLink"
-          >
-            <a className="dropdown-item" href="#">
-              <div className="notification__icon-wrapper">
-                <div className="notification__icon">
-                  <i className="material-icons"></i>
-                </div>
-              </div>
-              <div className="notification__content">
-                <span className="notification__category">Analytics</span>
-                <p>
-                  Your website’s active users count increased by
-                  <span className="text-success text-semibold">28%</span> in the
-                  last week. Great job!
-                </p>
-              </div>
-            </a>
-            <a className="dropdown-item" href="#">
-              <div className="notification__icon-wrapper">
-                <div className="notification__icon">
-                  <i className="material-icons"></i>
-                </div>
-              </div>
-              <div className="notification__content">
-                <span className="notification__category">Sales</span>
-                <p>
-                  Last week your store’s sales count decreased by
-                  <span className="text-danger text-semibold">5.52%</span>. It
-                  could have been worse!
-                </p>
-              </div>
-            </a>
-            <a className="dropdown-item notification__all text-center" href="#">
-              {" "}
-              View all Notifications{" "}
-            </a>
-          </div>
-        </li>
-        <li className="nav-item dropdown">
-          <a
-            className="nav-link dropdown-toggle text-nowrap px-3"
-            data-toggle="dropdown"
-            href="#"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <img
-              className="user-avatar rounded-circle mr-2"
-              src="images/avatars/0.jpg"
-              alt="User Avatar"
-            />
-            <span className="d-none d-md-inline-block">Sierra Brooks</span>
-          </a>
-          <div className="dropdown-menu dropdown-menu-small">
-            <a className="dropdown-item" href="user-profile-lite.html">
-              <i className="material-icons"></i> Profile
-            </a>
-            <a className="dropdown-item" href="components-blog-posts.html">
-              <i className="material-icons">vertical_split</i> Blog Posts
-            </a>
-            <a className="dropdown-item" href="add-new-post.html">
-              <i className="material-icons">note_add</i> Add New Post
-            </a>
-            <div className="dropdown-divider" />
-            <a className="dropdown-item text-danger" href={route('logout')}>
-              <i className="material-icons text-danger"></i> Logout{" "}
-            </a>
-            {/* <Dropdown>
-                <Dropdown.Content>
-                        <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link>
-                        <Dropdown.Link href={route('logout')} method="post" as="button">
-                                                Log Out
-                        </Dropdown.Link>
-                </Dropdown.Content>
-            </Dropdown> */}
-          </div>
-        </li>
-      </ul>
-      <nav className="nav">
-        <a
-          href="#"
-          className="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left"
-          data-toggle="collapse"
-          data-target=".header-navbar"
-          aria-expanded="false"
-          aria-controls="header-navbar"
-        >
-          <i className="material-icons"></i>
-        </a>
-      </nav>
-    </nav>
-  </div>
 
-  );
+
+            <ul className="hidden md:flex gap-6 text-white font-medium">
+                <li><a href="#" className="text-black hover:text-gray-600 transition">Accueil</a></li>
+                <li><a href="#" className="text-black hover:text-gray-600 transition">Services</a></li>
+                <li><a href="#" className="text-black hover:text-gray-600 transition">À propos</a></li>
+                <li><a href="#" className="text-black hover:text-gray-600 transition">Contact</a></li>
+            </ul>
+
+            <button className="hidden md:block bg-[#377df4] text-white border border-white px-4 py-2 rounded-md text-base font-medium hover:bg-[#2c65c7] transition-colors duration-300">
+                Sign in
+            </button>
+
+            <button className="md:hidden text-white text-2xl">☰</button>
+        </nav>
+    );
 }
