@@ -6,6 +6,7 @@ import Navbar from "./Partials/Navbar";
 const Welcome = function () {
     return (
         <>
+        <Navbar/>
             <div className="min-h-screen bg-gray-100 flex items-center justify-center py-16 px-4 sm:px-6 md:px-12">
                 <div className="text-center max-w-4xl mx-auto">
                     <h1
@@ -25,7 +26,7 @@ const Welcome = function () {
                     </p>
                     <div className="flex flex-col sm:flex-row sm:justify-center sm:gap-4">
                         <a
-                            className="btn bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4 sm:mb-0"
+                            className="btn bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:mb-0"
                             href="#0"
                             data-aos="zoom-y-out"
                             data-aos-delay={450}
