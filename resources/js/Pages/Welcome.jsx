@@ -1,4 +1,5 @@
 import React from "react";
+import Contact from "./Components/Contact";
 import Slider from "./Components/Slider_LandingPage";
 import Footer from "./Partials/Footer";
 import Navbar from "./Partials/Navbar";
@@ -51,6 +52,9 @@ const Welcome = function () {
                 {/* slider */}
                 <Slider/>
             </div>
+            {/* contact section */}
+            <Contact/>
+            
             <Footer />
         </>
     )
